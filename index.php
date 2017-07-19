@@ -95,6 +95,7 @@
 					<?php endif; ?>
 				</div>
 				<div class="actions">
+					<h5 class="note">Note: You should update data by click on the update button before find the best numbers!</h5>
 					<div class="act">
 						<h4>Best number today by the data from 2003 to now.</h4>
 						<button id="get_best_number" class="btn btn-success">Find the best numbers</button>

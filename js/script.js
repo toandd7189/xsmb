@@ -33,7 +33,7 @@ jQuery(document).ready(function($){
 				} else if(resp === 'uptodate') {
 					if ($('.update_message').hasClass('fail'))
 						$('.update_message').removeClass('fail');
-					$('.update_message').html('Your results is up to date.');
+					$('.update_message').html('The data is up to date.');
 				} else {
 					if ($('.update_message').hasClass('success'))
 						$('.update_message').removeClass('success');
@@ -42,7 +42,6 @@ jQuery(document).ready(function($){
 			}
 		});
 	});
-	
 	
 	// Gest number today with db from 2017 to now.
 	$("#get_best_number").click(function() {
