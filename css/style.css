@@ -1,0 +1,67 @@
+body {
+	margin : 20px;
+	font-family: sans-serif;
+}
+#wrapper {
+	width: 100%;
+	height: auto;
+	padding: 0 auto;
+	margin: 0 auto;
+	position: relative;
+	overflow: auto;
+}
+table {
+	margin-right: 30px;
+	float: left;
+	margin-left: 10px;
+}
+td {
+	border: 1px solid;
+	text-align: center;
+	vertical-align: middle;
+	padding: 5px;
+}
+
+.loading img {
+	width: 100px;
+}
+div.actions {
+	float: left;
+	border: 1px solid;
+	padding: 15px;
+	background-color: #cccccc;
+}
+
+.actions .act {
+	padding-bottom: 5px;
+}
+
+.actions .act .best_number {
+	box-shadow:5px 5px 10px black;
+	text-align: center;
+	vertical-align: middle;
+	min-height: 30px;
+	font-weight: bold;
+	display: block;
+	background-color: #ffffff;
+	margin-top: 10px;
+	padding: 5px;
+}
+
+div.update {
+	font-size: 16px;
+	font-weight: bold;
+	color: green;
+}
+div.col-md-4 {
+	width:auto;
+	padding-left: 0;
+	margin-top: 10px;
+}
+
+span.update_message.fail {
+	color: red;
+}
+span.update_message.success {
+	color: blue;
+}

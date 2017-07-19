@@ -1,0 +1,83 @@
+#t-wrap {
+	width: 100%;
+	min-height: 100%;
+	position: relative;
+	overflow: auto;
+	margin: 0 auto;
+	padding:0 auto;
+}
+.container-fluid #tool {
+	width: 100%;
+	height: auto;
+	/*border: 1px solid #ccc;*/
+}
+#t-wrap .row {
+	margin: 0 auto;
+}
+#t-wrap .row .col-md-2 {
+	padding : 0;
+}
+#tool .row .col-md-2 .square {
+	width: 100px;
+	height: 100px;
+	background: gray;
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 5px;
+}
+.square button#btnq {
+	margin-top: 15px;
+	border: none;
+	width: 50px;
+	height: 50px;
+	/*border-radius: 5px;*/
+	background-color: #ffffff;
+	background-image: url('../images/spin1.png');
+	background-position: center;
+}
+.square span {
+	color: blue;
+	float:left;
+	font-size: 10pt;
+}
+.square .spin {
+	font-weight: bold;
+	float: left;
+	font-size: 50pt;
+	text-align: center;
+	vertical-align: middle;
+	color: #c51414;
+	padding-left: 30px;
+}
+
+h1.g-title {
+	text-align: center;
+	display: block;
+	margin: 0 0 30px;
+	background: #30aad8;
+	color: #d0185b;
+	line-height: 100px;
+	height: 100px;
+}
+
+.container-fluid #results {
+	text-align: center;
+	width: 100%;
+	height: auto;
+	/*border: 1px solid #ccc;*/
+	margin: 0 auto;
+}
+.container-fluid #results table {
+	margin: 20px;
+}
+.container-fluid #results table tr td {
+	height: 35px;
+	min-width: 100px;
+	
+}
+table td { 
+	border: 1px solid;
+	text-align: center;
+	vertical-align: middle;
+	padding: 5px;
+}
