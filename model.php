@@ -127,8 +127,8 @@ class xsModel
 		} while($i <= 99);
 
 		$bestNumbers = array_keys($checkNumbers, max($checkNumbers));
-		echo count($loto);
-		var_dump($checkNumbers);die;
+		//echo count($loto);
+		//var_dump($checkNumbers);die;
 		if ($cf)
 			return $bestNumbers;
 		else
