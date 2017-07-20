@@ -33,7 +33,8 @@ div.actions {
 }
 
 .actions .act {
-	padding-bottom: 5px;
+	border-top: 1px solid #06336b;
+	padding-bottom: 15px;
 }
 
 .actions .act .best_number {
@@ -64,4 +65,11 @@ span.update_message.fail {
 }
 span.update_message.success {
 	color: blue;
+}
+h5.note {
+	display: block;
+	padding: 10px 10px;
+	border-radius: 3px;
+	background-color: rgba(11,68,101,0.66);
+	color: rgb(0,241,255);
 }

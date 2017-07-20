@@ -111,6 +111,7 @@ class xsModel
 		
 		$checkNumbers = array();
 		$i = 0;
+		//var_dump($loto);die;
 		do {
 			$l = '';
 			if ($i < 10)
@@ -119,16 +120,15 @@ class xsModel
 				$l .= $i;
 			$checkNumbers[$l] = 0;
 			foreach ($loto as $d) {
-				foreach($d as $number) {
-					if ($l === $number)
+					if (in_array($l, $d))
 						$checkNumbers[$l]++;
-				}
 			}
 			$i++;
 		} while($i <= 99);
 
 		$bestNumbers = array_keys($checkNumbers, max($checkNumbers));
-		
+		//echo count($loto);
+		//var_dump($checkNumbers);die;
 		if ($cf)
 			return $bestNumbers;
 		else
@@ -174,7 +174,12 @@ class xsModel
 		// Get all results of the next day which has special number in yesterday.
 		$rs_by_special_ys = $this->getResultsBySpecialYesterday($special_ys);
 		if (!empty($rs_by_special_ys)) {
-			$i = 0; 
+			$i = 0;
+			/*$count = count($rs_by_special_ys);
+			foreach ($rs_by_special_ys as $obj) {
+				if (!$obj || $obj->day != date('l', strtotime($date)))
+					$count--;
+			} */
 			do {
 				$l = '';
 				if ($i < 10)
@@ -183,17 +188,18 @@ class xsModel
 					$l .= $i;
 				$numbers[$l] = 0;
 				foreach ($rs_by_special_ys as $obj) {
-					if (!$obj)
+					if (!$obj || $obj->day != date('l', strtotime($date)))
 						continue;
-					foreach ($obj->loto as $lo) {
-						if ($l === $lo)
-							$numbers[$l]++;
-					}
+					if (in_array($l, $obj->loto))
+						$numbers[$l]++;
 				}
 				$i++;
 				
 			} while($i <= 99);
 		}
+		//echo date('l', strtotime($date));
+		//echo $count;
+		//var_dump($numbers);die;
 		$bestNumbers = array_keys($numbers, max($numbers));
 		
 		return $bestNumbers;
