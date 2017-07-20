@@ -175,11 +175,11 @@ class xsModel
 		$rs_by_special_ys = $this->getResultsBySpecialYesterday($special_ys);
 		if (!empty($rs_by_special_ys)) {
 			$i = 0;
-			$count = count($rs_by_special_ys);
+			/*$count = count($rs_by_special_ys);
 			foreach ($rs_by_special_ys as $obj) {
 				if (!$obj || $obj->day != date('l', strtotime($date)))
 					$count--;
-			}
+			} */
 			do {
 				$l = '';
 				if ($i < 10)
