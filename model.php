@@ -126,7 +126,7 @@ class xsModel
 			$i++;
 		} while($i <= 99);
 
-		$bestNumbers = array_keys($checkNumbers, max($checkNumbers));
+		$bestNumbers = array_keys($checkNumbers, min($checkNumbers));
 		//echo count($loto);
 		//var_dump($checkNumbers);die;
 		if ($cf)
@@ -200,7 +200,7 @@ class xsModel
 		//echo date('l', strtotime($date));
 		//echo $count;
 		//var_dump($numbers);die;
-		$bestNumbers = array_keys($numbers, max($numbers));
+		$bestNumbers = array_keys($numbers, min($numbers));
 		
 		return $bestNumbers;
 	}
