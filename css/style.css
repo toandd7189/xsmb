@@ -10,6 +10,10 @@ body {
 	position: relative;
 	overflow: auto;
 }
+#wrapper .container {
+	width: auto;
+}
+
 table {
 	margin-right: 30px;
 	float: left;
@@ -26,6 +30,7 @@ td {
 	width: 100px;
 }
 div.actions {
+	width: 45%;
 	float: left;
 	border: 1px solid;
 	padding: 15px;
@@ -72,4 +77,10 @@ h5.note {
 	border-radius: 3px;
 	background-color: rgba(11,68,101,0.66);
 	color: rgb(0,241,255);
+}
+.rs_yesterday {
+	display: block;
+	width: 100%;
+	float:left;
+	padding-bottom: 30px;
 }
