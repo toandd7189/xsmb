@@ -30,7 +30,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 	<head>
-		<link rel="shortcut icon" type="image/png" href="images/favicon.jpg"/>
+		<link rel="shortcut icon" type="image/png" href="images/favicon.gif"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
@@ -40,7 +40,7 @@
 		<link href="css/reset.css" type="text/css" rel="stylesheet" />
 		<link href="css/style.css" type="text/css" rel="stylesheet" />
 		
-		<title>Thánh Lô</title>
+		<title>BingGo</title>
 	</head>
 	<body>
 		<div id="wrapper">
@@ -100,7 +100,7 @@
 								<?php endif; ?>
 							</div>
 							<div class="act">
-								<label>Nhập ngày<label>
+								<label>Select date to find the results.</label>
 								<input class="datepicker" name="date" data-date-format="dd-mm-yyyy">
 								<div class="loading">
 									<img src="images/loading.gif" />

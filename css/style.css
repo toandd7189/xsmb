@@ -42,6 +42,11 @@ div.actions {
 	padding-bottom: 15px;
 }
 
+.act label {
+	display: block;
+	padding: 10px;
+}
+
 .actions .act .best_number {
 	box-shadow:5px 5px 10px black;
 	text-align: center;

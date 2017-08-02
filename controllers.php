@@ -19,9 +19,9 @@ switch ($action) {
 		$y = date('Y', strtotime($date));
 		$results = $model->getResultsDay($date, $month, $y);
 		if (empty($results))
-			echo 'Không tìm thấy kết quả cho ngày '. $date;
+			echo 'It hasn\'t got results of '. $date;
 		else 
-			echo xsHelper::render($results);
+			echo xsHelper::render($results, $date);
 		break;
 	case 'getBestNumber' :
 		$number = $model->getBestNumber($dayofweek, true, $year);
