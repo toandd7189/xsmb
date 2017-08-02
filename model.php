@@ -111,7 +111,6 @@ class xsModel
 		
 		$checkNumbers = array();
 		$i = 0;
-		//var_dump($loto);die;
 		do {
 			$l = '';
 			if ($i < 10)
@@ -125,18 +124,13 @@ class xsModel
 			}
 			$i++;
 		} while($i <= 99);
-
+    
+		asort($checkNumbers);
 		$bestNumbers = array_keys($checkNumbers, min($checkNumbers));
-		//echo count($loto);
-		//var_dump($checkNumbers);die;
 		if ($cf)
 			return $bestNumbers;
 		else
 			return $checkNumbers;
-	}
-	
-	public function getSpecialYesterday($date) {
-		
 	}
 	
 	public function getResultsBySpecialYesterday($special_yesterday) {
@@ -175,11 +169,11 @@ class xsModel
 		$rs_by_special_ys = $this->getResultsBySpecialYesterday($special_ys);
 		if (!empty($rs_by_special_ys)) {
 			$i = 0;
-			/*$count = count($rs_by_special_ys);
+			$count = count($rs_by_special_ys);
 			foreach ($rs_by_special_ys as $obj) {
-				if (!$obj || $obj->day != date('l', strtotime($date)))
+				if (!$obj)
 					$count--;
-			} */
+			}
 			do {
 				$l = '';
 				if ($i < 10)
@@ -188,7 +182,7 @@ class xsModel
 					$l .= $i;
 				$numbers[$l] = 0;
 				foreach ($rs_by_special_ys as $obj) {
-					if (!$obj || $obj->day != date('l', strtotime($date)))
+					if (!$obj)
 						continue;
 					if (in_array($l, $obj->loto))
 						$numbers[$l]++;
@@ -197,12 +191,86 @@ class xsModel
 				
 			} while($i <= 99);
 		}
-		//echo date('l', strtotime($date));
-		//echo $count;
-		//var_dump($numbers);die;
+		
+		// Sort numbers.
+		asort($numbers);
+    
 		$bestNumbers = array_keys($numbers, min($numbers));
 		
 		return $bestNumbers;
 	}
+	
+	public function getBestSpecial($date) {
+		$bestSpecial = [];
+		$specials = [];
+		$dayofweek = date('l', strtotime($date));
+		$results = $this->getResultsDayOfWeek($dayofweek);
+		
+		if (empty($results)) return;
+		
+		foreach ($results as $result) {
+			$specials[] = $result['xsmb']->{'Đặc biệt'}[0];
+		}
+		$i = 0;
+		do {
+			$s = '';
+			if ($i < 10)
+				$s .= '0'.$i;
+			else
+				$s .= $i;
+			$bestSpecial[$s] = 0;
+			foreach ($specials as $spe) {
+				$lo = substr($spe, -2);
+				if ($s == $lo)
+					$bestSpecial[$s]++;
+			}
+			$i++;
+		} while ($i <= 99);
+		asort($bestSpecial);
+		$best_sp = array_keys($bestSpecial, min($bestSpecial));
+		
+		return $best_sp;
+	}
+	
+	public function getBestSpecialFL($date) {
+		//$date = '28-07-2017';
+		$specials = [];
+		$dayofweek = date('l', strtotime($date));
+		$results = $this->getResultsDayOfWeek($dayofweek);
+		
+		if (empty($results)) return;
+		
+		foreach ($results as $result) {
+			if (!$result['xsmb']->{'Đặc biệt'})
+				continue;
+			$specials[] = substr($result['xsmb']->{'Đặc biệt'}[0], -2);
+		}
+		
+		$firstLetters = array();
+		$lastLetters = array();
+		
+		foreach ($specials as $sp) {
+			$first = substr($sp, 0,1);
+			$last = substr($sp, 1);
+			
+			// The First Letter.
+			if (!isset($firstLetters[$first]))
+				$firstLetters[$first] = 0;
+			else 
+				$firstLetters[$first]++;
+			
+			// The Last Letter.
+			if (!isset($lastLetters[$last]))
+				$lastLetters[$last] = 0;
+			else 
+				$lastLetters[$last]++;
+		}
+		asort($firstLetters);
+		asort($lastLetters);
+		var_dump($firstLetters);
+		var_dump($lastLetters);
+		die;
+	}
+	
 }
 

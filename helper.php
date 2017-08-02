@@ -113,4 +113,14 @@ class xsHelper
 			echo 'uptodate';
 		}
 	}
+	
+	public static function render($data) {
+		$displayData = $data;
+		ob_start();
+		include ('layouts/results.php');
+		$output = ob_get_contents();
+		ob_end_clean();
+		
+		return $output;
+	}
 }
