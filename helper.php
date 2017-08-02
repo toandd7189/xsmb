@@ -115,6 +115,6 @@ class xsHelper
 	}
 	
 	public static function render($data) {
-		self::getLayoutPath('results')
+		echo 'test';
 	}
 }
