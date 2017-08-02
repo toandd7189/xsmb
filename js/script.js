@@ -45,6 +45,7 @@ jQuery(document).ready(function($){
 	
 	// Get results by the date.
 	$('.datepicker').datepicker().on('changeDate', function(){
+		$('#date_results').html('');
 		$date = $(this).val();
 		loadding = $(this).next();
 		$.ajax({
