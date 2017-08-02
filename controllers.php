@@ -14,15 +14,14 @@ $model = new xsModel();
 $number = array();
 
 switch ($action) {
-	case 'getResults' :
-		$day = date('d-m-Y', strtotime($date));
+	case 'getResults' :	
 		$month = date('F', strtotime($date));
 		$y = date('Y', strtotime($date));
-		$results = $model->getResultsDay($day, $month, $y);
+		$results = $model->getResultsDay($date, $month, $y);
 		if (empty($results))
-			echo 'Không tìm thấy kết quả cho ngày '. $day;
+			echo 'Không tìm thấy kết quả cho ngày '. $date;
 		else 
-			echo xsHelper::render($results->xsmb);
+			echo xsHelper::render($results);
 		break;
 	case 'getBestNumber' :
 		$number = $model->getBestNumber($dayofweek, true, $year);

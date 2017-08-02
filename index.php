@@ -101,8 +101,7 @@
 							</div>
 							<div class="act">
 								<label>Nhập ngày<label>
-								<input class="datepicker" name="date" data-date-format="mm/dd/yyyy">
-								<button id="getresult">Xem kết quả</button>
+								<input class="datepicker" name="date" data-date-format="dd-mm-yyyy">
 								<div class="loading">
 									<img src="images/loading.gif" />
 								</div>

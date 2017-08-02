@@ -115,6 +115,12 @@ class xsHelper
 	}
 	
 	public static function render($data) {
-		echo 'test';
+		$displayData = $data;
+		ob_start();
+		include ('layouts/results.php');
+		$output = ob_get_contents();
+		ob_end_clean();
+		
+		return $output;
 	}
 }

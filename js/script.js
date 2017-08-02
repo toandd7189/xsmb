@@ -44,11 +44,8 @@ jQuery(document).ready(function($){
 	});
 	
 	// Get results by the date.
-	$('.datepicker').datepicker({
-		startDate: '-3d'
-	});
-	$('#getresult').click(function() {
-		$date = $('input[name="date"]').val();
+	$('.datepicker').datepicker().on('changeDate', function(){
+		$date = $(this).val();
 		loadding = $(this).next();
 		$.ajax({
 			method: 'POST',
@@ -61,11 +58,11 @@ jQuery(document).ready(function($){
 				loadding.hide();
 			},
 			success: function(resp) {
-				console.log(resp);
+				$('#date_results').html(resp);
 			}
 		});
-		
 	});
+	
 	
 	
 	// Gest number today with db from 2017 to now.
