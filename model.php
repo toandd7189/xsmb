@@ -124,6 +124,7 @@ class xsModel
 			}
 			$i++;
 		} while($i <= 99);
+    
 		asort($checkNumbers);
 		$bestNumbers = array_keys($checkNumbers, min($checkNumbers));
 		if ($cf)
@@ -193,6 +194,7 @@ class xsModel
 		
 		// Sort numbers.
 		asort($numbers);
+    
 		$bestNumbers = array_keys($numbers, min($numbers));
 		
 		return $bestNumbers;
