@@ -21,7 +21,7 @@ switch ($action) {
 		if (empty($results))
 			echo 'Không tìm thấy kết quả cho ngày '. $date;
 		else 
-			echo xsHelper::render($results);
+			echo xsHelper::render($results, $date);
 		break;
 	case 'getBestNumber' :
 		$number = $model->getBestNumber($dayofweek, true, $year);

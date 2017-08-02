@@ -100,7 +100,7 @@
 								<?php endif; ?>
 							</div>
 							<div class="act">
-								<label>Nhập ngày<label>
+								<label>Select date to find the results.</label>
 								<input class="datepicker" name="date" data-date-format="dd-mm-yyyy">
 								<div class="loading">
 									<img src="images/loading.gif" />

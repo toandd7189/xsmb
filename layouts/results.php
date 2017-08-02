@@ -11,6 +11,7 @@
 		}
 	}
 ?>
+<h3><?php echo $results->day ?>, <?php echo $results->date ?></h3>
 <table width="60%">
 	<?php foreach ($xsmb as $g => $rows) : ?>
 		<?php if (count($rows) != 6) : ?>
