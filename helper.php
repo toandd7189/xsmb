@@ -113,15 +113,4 @@ class xsHelper
 			echo 'uptodate';
 		}
 	}
-	
-	public static function render($data, $date) {
-		$displayData = $data;
-		$displayData->date = $date;
-		ob_start();
-		include ('layouts/results.php');
-		$output = ob_get_contents();
-		ob_end_clean();
-		
-		return $output;
-	}
 }

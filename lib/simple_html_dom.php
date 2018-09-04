@@ -72,11 +72,10 @@ function file_get_html($url, $use_include_path = false, $context=null, $offset =
     // We DO force the tags to be terminated.
     $dom = new simple_html_dom(null, $lowercase, $forceTagsClosed, $target_charset, $stripRN, $defaultBRText, $defaultSpanText);
     // For sourceforge users: uncomment the next line and comment the retreive_url_contents line 2 lines down if it is not already done.
-    
-	$contents = file_get_contents($url, $use_include_path, $context);
+    $contents = file_get_contents($url, $use_include_path, $context);
     // Paperg - use our own mechanism for getting the contents as we want to control the timeout.
     //$contents = retrieve_url_contents($url);
-	if (empty($contents) || strlen($contents) > MAX_FILE_SIZE)
+    if (empty($contents) || strlen($contents) > MAX_FILE_SIZE)
     {
         return false;
     }
@@ -1069,7 +1068,7 @@ class simple_html_dom
         // end
         $this->root->_[HDOM_INFO_END] = $this->cursor;
         $this->parse_charset();
-		
+
         // make load function chainable
         return $this;
 
@@ -1233,7 +1232,7 @@ class simple_html_dom
         {
             // Have php try to detect the encoding from the text given to us.
             $charset = mb_detect_encoding($this->root->plaintext . "ascii", $encoding_list = array( "UTF-8", "CP1252" ) );
-			if (is_object($debugObject)) {$debugObject->debugLog(2, 'mb_detect found: ' . $charset);}
+            if (is_object($debugObject)) {$debugObject->debugLog(2, 'mb_detect found: ' . $charset);}
 
             // and if this doesn't work...  then we need to just wrongheadedly assume it's UTF-8 so that we can move on - cause this will usually give us most of what we need...
             if ($charset === false)

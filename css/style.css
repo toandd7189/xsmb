@@ -10,10 +10,6 @@ body {
 	position: relative;
 	overflow: auto;
 }
-#wrapper .container {
-	width: auto;
-}
-
 table {
 	margin-right: 30px;
 	float: left;
@@ -30,35 +26,10 @@ td {
 	width: 100px;
 }
 div.actions {
-	width: 45%;
 	float: left;
 	border: 1px solid;
 	padding: 15px;
-	background-color: #cccccc;
 }
-
-.actions .act {
-	border-top: 1px solid #06336b;
-	padding-bottom: 15px;
-}
-
-.act label {
-	display: block;
-	padding: 10px;
-}
-
-.actions .act .best_number {
-	box-shadow:5px 5px 10px black;
-	text-align: center;
-	vertical-align: middle;
-	min-height: 30px;
-	font-weight: bold;
-	display: block;
-	background-color: #ffffff;
-	margin-top: 10px;
-	padding: 5px;
-}
-
 div.update {
 	font-size: 16px;
 	font-weight: bold;
@@ -76,16 +47,13 @@ span.update_message.fail {
 span.update_message.success {
 	color: blue;
 }
-h5.note {
+.best_number {
+	text-align: center;
+	vertical-align: middle;
+	min-height: 30px;
+	font-weight: bold;
 	display: block;
-	padding: 10px 10px;
-	border-radius: 3px;
-	background-color: rgba(11,68,101,0.66);
-	color: rgb(0,241,255);
-}
-.rs_yesterday {
-	display: block;
-	width: 100%;
-	float:left;
-	padding-bottom: 30px;
+	background-color: #cccccc;
+	margin-top: 10px;
+	padding: 5px;
 }
