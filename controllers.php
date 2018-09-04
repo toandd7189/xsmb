@@ -14,15 +14,6 @@ $model = new xsModel();
 $number = array();
 
 switch ($action) {
-	case 'getResults' :	
-		$month = date('F', strtotime($date));
-		$y = date('Y', strtotime($date));
-		$results = $model->getResultsDay($date, $month, $y);
-		if (empty($results))
-			echo 'It hasn\'t got results of '. $date;
-		else 
-			echo xsHelper::render($results, $date);
-		break;
 	case 'getBestNumber' :
 		$number = $model->getBestNumber($dayofweek, true, $year);
 		break;
@@ -34,12 +25,6 @@ switch ($action) {
 		break;
 	case 'getNumberOfDate' :
 		$number = $model->getNumberOfDate($date);
-		break;
-	case 'getBestSpecial' :
-		$number = $model->getBestSpecial($date);
-		break;
-	case 'getBestSpecial_fl' :
-		$number = $model->getBestSpecialFL($date);
 		break;
 	case 'update':
 		xsHelper::updateDb($year);
